@@ -1,0 +1,6 @@
+@FinCalc_HostAddress = http://localhost:5022
+
+GET {{FinCalc_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
