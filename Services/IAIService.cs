@@ -2,7 +2,7 @@
 
 namespace FinCalc.Services
 {
-    public interface IAIService
+    public interface IAIService 
     {
         Task<ChatResponse> GetAnswerAsync(ChatRequest request);
     }
