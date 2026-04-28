@@ -41,5 +41,26 @@ namespace FinCalc.Services
 
 
         }
+        public DepositResponse CalculateDeposit(DepositRequest request)
+        {
+            if (request.InitialAmount <= 0) throw new ArgumentException("Сумма должна быть больше 0");
+
+
+            if (request.Months <= 0) throw new ArgumentException("срок должен быть больше 0");
+            if (request.AnnualInterestRate < 0) throw new ArgumentException("Ставка не может быть отрицательной");
+
+            double monthlyRate = request.AnnualInterestRate / 12.0 / 100.0;
+
+            double finalAmount = (double)request.InitialAmount*Math.Pow(1+monthlyRate, request.Months);
+
+            decimal final = Math.Round((decimal)finalAmount,2);
+            decimal profit = Math.Round(final - request.InitialAmount, 2);
+
+            return new DepositResponse
+            {
+                FinalAmount = final,
+                Profit = profit
+            };
+        }
     }
 }

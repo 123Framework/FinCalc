@@ -27,6 +27,19 @@ namespace FinCalc.Controllers
             }
             
         }
+        [HttpPost("deposit")]
+        public ActionResult<DepositResponse> CalculateDeposit([FromBody] DepositRequest request) {
+            try
+            {
+                var result = _calcService.CalculateDeposit(request);
+                return Ok(result);
+            }
+            catch (ArgumentException ex) { 
+            
+            return BadRequest(new{ error = ex.Message});
+            }
+
+        }
     }
 
 }
