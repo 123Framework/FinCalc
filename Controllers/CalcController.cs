@@ -15,7 +15,7 @@ namespace FinCalc.Controllers
         }
 
         [HttpPost("load")]
-        public ActionResult<LoadResponse> CalculateLoan([FromBody] LoadRequest request)
+        public ActionResult<LoanResponse> CalculateLoan([FromBody] LoanRequest request)
         {
             try
             {

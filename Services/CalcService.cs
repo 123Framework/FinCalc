@@ -4,7 +4,7 @@ namespace FinCalc.Services
 {
     public class CalcService
     {
-        public LoadResponse CalculateLoan(LoadRequest request)
+        public LoanResponse CalculateLoan(LoanRequest request)
         {
             if (request.LoanAmount <= 0)
             {
@@ -18,7 +18,7 @@ namespace FinCalc.Services
                 decimal monthlyPaymentZero = Math.Round(request.LoanAmount / request.Months, 2);
                 decimal totalPaymentZero = Math.Round(monthlyPaymentZero*request.Months,2);
                 decimal overpaymentZero = totalPaymentZero - request.LoanAmount;
-                return new LoadResponse
+                return new LoanResponse
                 {
                     MonthlyPayment = monthlyPaymentZero,
                     TotalPayment = totalPaymentZero,
@@ -32,7 +32,7 @@ namespace FinCalc.Services
             decimal totalPayment = Math.Round(monthlyPayment * request.Months, 2);
             decimal overpayment = Math.Round(totalPayment - request.LoanAmount, 2);
 
-            return new LoadResponse
+            return new LoanResponse
             {
                 MonthlyPayment = monthlyPayment,
                 TotalPayment = totalPayment,
