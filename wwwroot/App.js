@@ -30,7 +30,7 @@ async function sendMessage() {
             })
         });
         const data = await response.json();
-        if (!response, ok) {
+        if (!response.ok) {
             addMessage("Ошибка:" + (data.error || "не удалось получить ответ"), "bot");
             return;
         }
