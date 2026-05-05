@@ -21,8 +21,13 @@ async function sendMessage() {
     if (!message) return;
     addMessage(message, "user");
     messageInput.value = "";
+    const loading = document.createElement("div");
+    loading.className = "message bot";
+    loading.textContent = "AI думает...";
+    chatBox.appendChild(loading);
 
     try {
+       
         const response = await fetch("https://localhost:7227/api/chat", {
             method: "POST",
             headers: {
@@ -33,11 +38,12 @@ async function sendMessage() {
             })
         });
         const data = await response.json();
+        chatBox.removeChild(loading);
         if (!response.ok) {
             addMessage("Ошибка:" + (data.error || "не удалось получить ответ"), "bot");
             return;
         }
-        addMessage(data.answer, "bot");
+        await typeMessage(data.answer, "bot");
     }
     catch (error) {
         addMessage("ошибка соединения с сервером", "bot");
@@ -57,15 +63,17 @@ function addMessage(text, type) {
 }
 function renderMessage(message) {
     const div = document.createElement("div");
-    div.className = `message ${type}`;
-    div.textContent = text;
+    div.className = `message ${message.type}`;
+    div.textContent = message.text;
 
     chatBox.appendChild(div);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 function saveMessages() {
     localStorage.setItem("chatHistory", JSON.stringify(messages));
-    window.onload = () => {
+    
+}
+window.onload = () => {
         const saved = localStorage.getItem("chatHistory");
         if (saved) {
             messages = JSON.parse(saved);
@@ -73,12 +81,27 @@ function saveMessages() {
             messages.forEach(m => renderMessage(m));
         }
     }
-}
 
 function clearChat() {
     localStorage.removeItem("chatHistory");
     messages = [];
     chatBox.innerHTML = "";
+}
+async function typeMessage(text, type) {
+    const div = document.createElement("div");
+    div.className = `message ${type}`;
+    chatBox.appendChild(div);
+
+    let i = 0;
+    while (i < text.length) {
+        div.textContent += text.charAt(i);
+        i++;
+
+        await new Promise(resolve => setTimeout(resolve, 20));
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+    messages.push({ text, type });
+    saveMessages();
 }
 
 
