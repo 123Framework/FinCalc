@@ -1,5 +1,6 @@
 ﻿using FinCalc.Models;
 using FinCalc.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,11 @@ namespace FinCalc.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+
+    [Authorize]
+
+
+
     public class ChatController : ControllerBase
     {
         private readonly IAIService _aiService;
@@ -21,6 +27,8 @@ namespace FinCalc.Controllers
         public async Task<ActionResult<ChatResponse>> Ask([FromBody] ChatRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.Message)) return BadRequest("message is empty");
+
+            var userId = User.FindFirst("userId")?.Value;
 
             await _chatService.SaveMessageAsync(request.Message, "user");
             var result = await _aiService.GetAnswerAsync(request);

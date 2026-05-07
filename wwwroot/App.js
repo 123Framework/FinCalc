@@ -13,7 +13,27 @@ messageInput.addEventListener("keydown", function (e) {
 
 });
 
-
+async function login() {
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+    const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password
+        })
+    });
+    const data = await response.json();
+    if (!response.ok) {
+        alert("ошибка логина");
+        return;
+    }
+    localStorage.setItem("token, data.token");
+    alert("Вы вошли");
+}
 
 async function sendMessage() {
     const message = messageInput.value.trim();
@@ -31,7 +51,7 @@ async function sendMessage() {
         const response = await fetch("https://localhost:7227/api/chat", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json", "Authorization": "Bearer" + localStorage.getItem("token")
             },
             body: JSON.stringify({
                 message: message

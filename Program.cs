@@ -1,6 +1,9 @@
 using FinCalc.Data;
 using FinCalc.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +20,19 @@ builder.Services.AddScoped<ChatService, ChatService>();
 
 builder.Services.AddScoped<IAIService, OpenAiService>();
 builder.Services.AddScoped<CalcService>();
+builder.Services.AddScoped<AuthService>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey    = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,6 +48,8 @@ app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.UseAuthorization();
+
+app.UseAuthentication();
 
 app.MapControllers();
 
