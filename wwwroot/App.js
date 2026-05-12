@@ -4,6 +4,13 @@ const chatBox = document.getElementById("chatBox");
 const messageInput = document.getElementById("messageInput");
 const sendBtn = document.getElementById("sendBtn");
 
+const token = localStorage.getItem("token");
+
+if (!token) {
+    window.location.href = "/Login.html";
+}
+const chatContainer = document.getElementById("chatContainer");
+
 sendBtn.addEventListener("click", sendMessage);
 
 messageInput.addEventListener("keydown", function (e) {
@@ -31,7 +38,7 @@ async function login() {
         alert("ошибка логина");
         return;
     }
-    localStorage.setItem("token, data.token");
+    localStorage.setItem("token", data.token);
     alert("Вы вошли");
 }
 
@@ -51,7 +58,7 @@ async function sendMessage() {
         const response = await fetch("https://localhost:7227/api/chat", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json", "Authorization": "Bearer" + localStorage.getItem("token")
+                "Content-Type": "application/json", "Authorization": "Bearer" + token
             },
             body: JSON.stringify({
                 message: message
@@ -123,5 +130,10 @@ async function typeMessage(text, type) {
     messages.push({ text, type });
     saveMessages();
 }
+function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "/login.html"
+}
+
 
 

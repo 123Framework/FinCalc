@@ -11,13 +11,11 @@
 </head>
 
 <body>
-<div>
-    <input id="loginUsername" placeholder="Username" />
-    <input id="loginPassword" type="password" placeholder="Password" />
-    <button onclick="login()">Login</button>
+    <button onclick="logout()" class="logout-btn">
+        Logout
+    </button>
 
-</div>
-    <div class="chat-container">
+    <div class="chat-container" id=" chatContainer">
         <h1>Finance AI assistant</h1>
 
         <div id="chatBox" class="chat-box">
@@ -25,15 +23,16 @@
                 Привет я финансовый AI-ассистент. Могу рассчитать крдеит или депозит.
             </div>
         </div>
-<div class="input-area">
-    <input id="messageInput" type="text" placeholder="Например: кредит 100000  под 18% на 24 месяца" />
-    <button id="sendBtn">Отправить</button>
-    <button onclick="clearChat()">Очистить чат</button>
-</div>
+        <div class="input-area">
+            <input id="messageInput" type="text" placeholder="Например: кредит 100000  под 18% на 24 месяца" />
+            <button id="sendBtn">Отправить</button>
+            <button onclick="clearChat()">Очистить чат</button>
+        </div>
     </div>
 
-<script src="App.js">
-</script>
+    <script src="App.js">
+    </script>
+
 
 </body>
 
