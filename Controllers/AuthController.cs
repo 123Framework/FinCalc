@@ -36,7 +36,7 @@ namespace FinCalc.Controllers
         public IActionResult Login(LoginRequest request) {
             var user = _context.Users.FirstOrDefault(u => u.Username == request.Username);
             if ( user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
-                return Unauthorized("Invalid credentials");
+                return Unauthorized(new {error = "Invalid credentials" });
             var token = _authService.GenerateToken(user);
             return Ok(new { token });
 

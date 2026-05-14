@@ -40,6 +40,7 @@ async function login() {
     }
     localStorage.setItem("token", data.token);
     alert("Вы вошли");
+    window.location.href = "/";
 }
 
 async function sendMessage() {
@@ -55,10 +56,10 @@ async function sendMessage() {
 
     try {
        
-        const response = await fetch("https://localhost:7227/api/chat", {
+        const response = await fetch("/api/chat", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json", "Authorization": "Bearer" + token
+                "Content-Type": "application/json", "Authorization": "Bearer " + localStorage.getItem("token")
             },
             body: JSON.stringify({
                 message: message

@@ -16,8 +16,14 @@ async function login() {
             password
         })
     });
+    const text = await response.text();
+    let data = {};
 
-    const data = await response.json();
+    try {
+         data = JSON.parse(text);
+    } catch {
+        data.error = text;
+    }
     if (!response.ok) {
         alert(data || "login failed");
         return;
