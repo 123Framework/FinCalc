@@ -44,6 +44,8 @@ Array.Empty<string>()
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<TransactionService>();
+
 builder.Services.AddScoped<ChatService, ChatService>();
 
 builder.Services.AddScoped<IAIService, OpenAiService>();
@@ -57,8 +59,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     {
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(key),
+
         ValidateIssuer = false,
-        ValidateAudience = false
+        ValidateAudience = false,
+
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero,
     };
 });
 

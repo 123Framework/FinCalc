@@ -59,7 +59,9 @@ async function sendMessage() {
         const response = await fetch("/api/chat", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json", "Authorization": "Bearer " + localStorage.getItem("token")
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                //"Authorization": "Bearer " + localStorage.getItem("token")
             },
             body: JSON.stringify({
                 message: message
@@ -133,7 +135,7 @@ async function typeMessage(text, type) {
 }
 function logout() {
     localStorage.removeItem("token");
-    window.location.href = "/login.html"
+    window.location.href = "/Login.html"
 }
 
 

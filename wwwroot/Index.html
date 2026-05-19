@@ -7,14 +7,23 @@
     <title>
 
     </title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Style.css" />
 </head>
 
 <body>
     <button onclick="logout()" class="logout-btn">
         Logout
     </button>
-
+    <div class="transaction-form">
+        <input id="amountInput" placeholder="Сумма" />
+        <select id="typeInput">
+            <option value="income">Доход</option>
+            <option value="expense">Расход</option>
+        </select>
+        <input id=" categoryInput" placeholder="Категория" />
+        <input id="descriptionInput" placeholder="Описание" />
+        <button onclick="addTransaction()">Добавить</button>
+    </div>
     <div class="chat-container" id=" chatContainer">
         <h1>Finance AI assistant</h1>
 

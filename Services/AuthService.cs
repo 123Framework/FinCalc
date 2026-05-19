@@ -28,7 +28,7 @@ namespace FinCalc.Services
             var token = new JwtSecurityToken(
 
                 claims: claims,
-                expires: DateTime.Now.AddHours(3),
+                expires: DateTime.UtcNow.AddHours(3),
                 signingCredentials: creds);
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
