@@ -135,3 +135,41 @@ button:hover{
 .auth-container a:hover{
     text-decoration: underline;
 }
+.transactions-list{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+.transaction-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.transaction-info{
+    display: flex;
+    flex-direction: column;
+}
+.transaction-category{
+    font-weight: bold;
+    font-size: 16px;
+}
+.transaction-description{
+    color: gray;
+    font-size: 14px;
+}
+.transaction-amount{
+    font-size: 18px;
+    font-weight: bold;
+}
+.income{
+    color: #16a34a;
+}
+.expense{
+    color: #dc2626;
+}

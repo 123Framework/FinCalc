@@ -20,7 +20,7 @@ namespace FinCalc.Controllers
             CreateTransactionRequest request
             )
         {
-            var userId = int.Parse(User.FindFirst("user.id")!.Value);
+            var userId = int.Parse(User.FindFirst("userId")!.Value);
             var transaction = new Transaction
             {
                 Amount = request.Amount,

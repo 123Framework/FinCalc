@@ -26,7 +26,7 @@ async function login() {
     const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
-            "Content-Type":"application/json"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
             username: username,
@@ -55,7 +55,7 @@ async function sendMessage() {
     chatBox.appendChild(loading);
 
     try {
-       
+
         const response = await fetch("/api/chat", {
             method: "POST",
             headers: {
@@ -101,16 +101,17 @@ function renderMessage(message) {
 }
 function saveMessages() {
     localStorage.setItem("chatHistory", JSON.stringify(messages));
-    
-}
-window.onload = () => {
-        const saved = localStorage.getItem("chatHistory");
-        if (saved) {
-            messages = JSON.parse(saved);
 
-            messages.forEach(m => renderMessage(m));
-        }
+}
+window.onload = async() => {
+    const saved = localStorage.getItem("chatHistory");
+    if (saved) {
+        messages = JSON.parse(saved);
+
+        messages.forEach(m => renderMessage(m));
     }
+    await loadTransactions();
+}
 
 function clearChat() {
     localStorage.removeItem("chatHistory");
@@ -138,5 +139,64 @@ function logout() {
     window.location.href = "/Login.html"
 }
 
+window.addTransaction = async function () {
+    const amount = document.getElementById("amountInput").value;
+    const type = document.getElementById("typeInput").value;
+    const category = document.getElementById("categoryInput").value;
+    const description = document.getElementById("descriptionInput").value;
+
+    const response = await fetch("/api/transactions", {
+
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify({
+            amount,
+            type,
+            category,
+            description
+        })
+
+    })
+    if (!response.ok) {
+        alert("Ошибка");
+        return;
+    }
+    alert("Транзакция добавлена");
+    await loadTransactions();
+}
+async function loadTransactions() {
+    const response = await fetch("/api/transactions", {
+        headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        })
+    const data = await response.json();
+    const container = document.getElementById("transactionsList");
+    container.innerHTML = "";
+    data.forEach(transaction => {
+        const div = document.createElement("div");
+        div.className = "transaction-item";
+        div.innerHTML = `
+        <div class="transaction-info">
+            <div class="transaction-category">
+                ${transaction.category}
+            </div>
+            <div class="transaction-description">
+                ${transaction.description}
+            </div>
+        </div>
+        <div class="transaction-amount ${transaction.type}">
+            ${transaction.type === "income"
+            ? "+"
+            : "-"
+            }
+            ${transaction.amount}
+        </div>
+        `
+        container.appendChild(div);
+    })
+}
 
 
