@@ -1,0 +1,6 @@
+wwwroot\App.js
+wwwroot\Auth.js
+wwwroot\Index.html
+wwwroot\Login.html
+wwwroot\Register.html
+wwwroot\Style.css

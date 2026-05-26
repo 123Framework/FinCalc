@@ -103,7 +103,7 @@ function saveMessages() {
     localStorage.setItem("chatHistory", JSON.stringify(messages));
 
 }
-window.onload = async() => {
+window.onload = async () => {
     const saved = localStorage.getItem("chatHistory");
     if (saved) {
         messages = JSON.parse(saved);
@@ -171,10 +171,13 @@ async function loadTransactions() {
     const response = await fetch("/api/transactions", {
         headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}`
-        })
+        }
+    })
     const data = await response.json();
     const container = document.getElementById("transactionsList");
     container.innerHTML = "";
+    let income = 0;
+    let expense = 0;
     data.forEach(transaction => {
         const div = document.createElement("div");
         div.className = "transaction-item";
@@ -189,14 +192,24 @@ async function loadTransactions() {
         </div>
         <div class="transaction-amount ${transaction.type}">
             ${transaction.type === "income"
-            ? "+"
-            : "-"
+                ? "+"
+                : "-"
             }
             ${transaction.amount}
         </div>
         `
+        if (transaction.type === "income") {
+            income += Number(transaction.amount);
+        }
+        else {
+            expense += Number(transaction.amount);
+        }
         container.appendChild(div);
     })
+
+    document.getElementById("incomeValue").textContent = `${income}`;
+    document.getElementById("expenseValue").textContent = `${expense}`;
+    document.getElementById("balanceValue").textContent = `${income - expense}`;
 }
 
 

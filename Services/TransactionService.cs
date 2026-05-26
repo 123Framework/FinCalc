@@ -24,6 +24,15 @@ namespace FinCalc.Services
                 return await _context.Transactions.Where(t => t.UserId == userId).OrderByDescending(t => t.CreatedAt).ToListAsync();
             }
         }
+        public async Task<Transaction?> GetById(int id)
+        {
+            return await _context.Transactions.FirstOrDefaultAsync(t => t.Id == id);
+        }
+        public async Task Delete(Transaction transaction)
+        {
+            _context.Transactions.Remove(transaction);
+            await _context.SaveChangesAsync();
+        }
     }
 
 }

@@ -40,6 +40,22 @@ namespace FinCalc.Controllers
 
             return Ok(data);
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var userId = int.Parse(User.FindFirst("userId")!.Value);
+            var transaction = await _service.GetById(id);
+            if (transaction == null)
+            {
+                return NotFound();
+            }
+            if (transaction.UserId != userId)
+            {
+                return Forbid();
+            }
+            await _service.Delete(transaction);
+            return Ok();
+        }
 
     }
 }

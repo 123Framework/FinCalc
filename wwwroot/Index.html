@@ -11,41 +11,71 @@
 </head>
 
 <body>
-    <button onclick="logout()" class="logout-btn">
-        Logout
-    </button>
-    <div id="transactionsList" class="transactions-list">
+    <div class="page">
+        <div class="top-bar">
+            <button onclick="logout()" class="logout-btn">
+                Logout
+            </button>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-title">
+                    Баланс
+                </div>
+                <div id="balanceValue" class="stat-value">
+                    0
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">
+                    Доходы
+                </div>
+                <div id="incomeValue" class="stat-value income">
+                    0
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">
+                    Pacходы
+                </div>
+                <div id="expenseValue" class="stat-value expense">
+                    0
+                </div>
+            </div>
 
-    </div>
-    <div class="transaction-form">
-        <input id="amountInput" placeholder="Сумма" />
-        <select id="typeInput">
-            <option value="income">Доход</option>
-            <option value="expense">Расход</option>
-        </select>
-        <input id="categoryInput" placeholder="Категория" />
-        <input id="descriptionInput" placeholder="Описание" />
-        <button onclick="addTransaction()">Добавить</button>
-    </div>
-    <div class="chat-container" id=" chatContainer">
-        <h1>Finance AI assistant</h1>
+        </div>
+        <div id="transactionsList" class="transactions-list">
 
-        <div id="chatBox" class="chat-box">
-            <div class="message bot">
-                Привет я финансовый AI-ассистент. Могу рассчитать крдеит или депозит.
+        </div>
+        <div class="transaction-form">
+            <input id="amountInput" placeholder="Сумма" />
+            <select id="typeInput">
+                <option value="income">Доход</option>
+                <option value="expense">Расход</option>
+            </select>
+            <input id="categoryInput" placeholder="Категория" />
+            <input id="descriptionInput" placeholder="Описание" />
+            <button onclick="addTransaction()">Добавить</button>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <h1>Finance AI assistant</h1>
+
+            <div id="chatBox" class="chat-box">
+                <div class="message bot">
+                    Привет я финансовый AI-ассистент. Могу рассчитать крдеит или депозит.
+                </div>
+            </div>
+            <div class="input-area">
+                <input id="messageInput" type="text" placeholder="Например: кредит 100000  под 18% на 24 месяца" />
+                <button id="sendBtn">Отправить</button>
+                <button onclick="clearChat()">Очистить чат</button>
             </div>
         </div>
-        <div class="input-area">
-            <input id="messageInput" type="text" placeholder="Например: кредит 100000  под 18% на 24 месяца" />
-            <button id="sendBtn">Отправить</button>
-            <button onclick="clearChat()">Очистить чат</button>
-        </div>
     </div>
+        <script src="App.js">
+        </script>
 
-    <script src="App.js">
-    </script>
-
-
+    
 </body>
 
 </html>

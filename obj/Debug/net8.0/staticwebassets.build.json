@@ -1,12 +1,640 @@
 {
   "Version": 1,
-  "Hash": "2blVeAFn2RaTISO+e4CIvcsdiSe3Ksp1nBh2212S6vw=",
+  "Hash": "ZmN3SuW9u6KwsjuUh6sR6HpuwscOePnsOPGA4WMpBC4=",
   "Source": "FinCalc",
   "BasePath": "_content/FinCalc",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "FinCalc\\wwwroot",
+      "Source": "FinCalc",
+      "ContentRoot": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\",
+      "BasePath": "_content/FinCalc",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\App.js",
+      "SourceId": "FinCalc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\",
+      "BasePath": "_content/FinCalc",
+      "RelativePath": "App#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3wot7o69fr",
+      "Integrity": "Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\App.js"
+    },
+    {
+      "Identity": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Auth.js",
+      "SourceId": "FinCalc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\",
+      "BasePath": "_content/FinCalc",
+      "RelativePath": "Auth#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qqwobt16hj",
+      "Integrity": "wsrht2g8tLcAwiF0dOEeyoaotaBEvzLrt3VtGI/UUEM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Auth.js"
+    },
+    {
+      "Identity": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Index.html",
+      "SourceId": "FinCalc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\",
+      "BasePath": "_content/FinCalc",
+      "RelativePath": "Index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4qzd0csz0d",
+      "Integrity": "5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Index.html"
+    },
+    {
+      "Identity": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Login.html",
+      "SourceId": "FinCalc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\",
+      "BasePath": "_content/FinCalc",
+      "RelativePath": "Login#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "60wsxqwpco",
+      "Integrity": "+sWWc4pk0j+qAch90ph5B7DwLCCXXrtCqQT6atZKelE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Login.html"
+    },
+    {
+      "Identity": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Register.html",
+      "SourceId": "FinCalc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\",
+      "BasePath": "_content/FinCalc",
+      "RelativePath": "Register#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m3uf4xk2b1",
+      "Integrity": "Iq6pav9UN9Ys07LrWHQ1JljxCR5MTC7053hTKxVcUT8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Register.html"
+    },
+    {
+      "Identity": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Style.css",
+      "SourceId": "FinCalc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\",
+      "BasePath": "_content/FinCalc",
+      "RelativePath": "Style#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xqlizdg6ba",
+      "Integrity": "Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Style.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "App.3wot7o69fr.js",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\App.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6264"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 May 2026 14:43:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3wot7o69fr"
+        },
+        {
+          "Name": "label",
+          "Value": "App.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o="
+        }
+      ]
+    },
+    {
+      "Route": "App.js",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\App.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6264"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 May 2026 14:43:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o="
+        }
+      ]
+    },
+    {
+      "Route": "Auth.js",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Auth.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1557"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wsrht2g8tLcAwiF0dOEeyoaotaBEvzLrt3VtGI/UUEM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 14 May 2026 14:14:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wsrht2g8tLcAwiF0dOEeyoaotaBEvzLrt3VtGI/UUEM="
+        }
+      ]
+    },
+    {
+      "Route": "Auth.qqwobt16hj.js",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Auth.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1557"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wsrht2g8tLcAwiF0dOEeyoaotaBEvzLrt3VtGI/UUEM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 14 May 2026 14:14:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qqwobt16hj"
+        },
+        {
+          "Name": "label",
+          "Value": "Auth.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wsrht2g8tLcAwiF0dOEeyoaotaBEvzLrt3VtGI/UUEM="
+        }
+      ]
+    },
+    {
+      "Route": "Index.4qzd0csz0d.html",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2646"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 May 2026 14:39:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4qzd0csz0d"
+        },
+        {
+          "Name": "label",
+          "Value": "Index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34="
+        }
+      ]
+    },
+    {
+      "Route": "Index.html",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2646"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 May 2026 14:39:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34="
+        }
+      ]
+    },
+    {
+      "Route": "Login.60wsxqwpco.html",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "592"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+sWWc4pk0j+qAch90ph5B7DwLCCXXrtCqQT6atZKelE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 19 May 2026 14:20:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "60wsxqwpco"
+        },
+        {
+          "Name": "label",
+          "Value": "Login.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+sWWc4pk0j+qAch90ph5B7DwLCCXXrtCqQT6atZKelE="
+        }
+      ]
+    },
+    {
+      "Route": "Login.html",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "592"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+sWWc4pk0j+qAch90ph5B7DwLCCXXrtCqQT6atZKelE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 19 May 2026 14:20:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+sWWc4pk0j+qAch90ph5B7DwLCCXXrtCqQT6atZKelE="
+        }
+      ]
+    },
+    {
+      "Route": "Register.html",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Register.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Iq6pav9UN9Ys07LrWHQ1JljxCR5MTC7053hTKxVcUT8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 19 May 2026 14:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Iq6pav9UN9Ys07LrWHQ1JljxCR5MTC7053hTKxVcUT8="
+        }
+      ]
+    },
+    {
+      "Route": "Register.m3uf4xk2b1.html",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Register.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Iq6pav9UN9Ys07LrWHQ1JljxCR5MTC7053hTKxVcUT8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 19 May 2026 14:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m3uf4xk2b1"
+        },
+        {
+          "Name": "label",
+          "Value": "Register.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Iq6pav9UN9Ys07LrWHQ1JljxCR5MTC7053hTKxVcUT8="
+        }
+      ]
+    },
+    {
+      "Route": "Style.css",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4820"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 May 2026 14:39:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw="
+        }
+      ]
+    },
+    {
+      "Route": "Style.xqlizdg6ba.css",
+      "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4820"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 26 May 2026 14:39:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xqlizdg6ba"
+        },
+        {
+          "Name": "label",
+          "Value": "Style.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw="
+        }
+      ]
+    }
+  ]
 }

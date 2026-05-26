@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\App.js",
+      "PackagePath": "staticwebassets\\App.js"
+    },
+    {
+      "Id": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Auth.js",
+      "PackagePath": "staticwebassets\\Auth.js"
+    },
+    {
+      "Id": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Index.html",
+      "PackagePath": "staticwebassets\\Index.html"
+    },
+    {
+      "Id": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Login.html",
+      "PackagePath": "staticwebassets\\Login.html"
+    },
+    {
+      "Id": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Register.html",
+      "PackagePath": "staticwebassets\\Register.html"
+    },
+    {
+      "Id": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Style.css",
+      "PackagePath": "staticwebassets\\Style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FinCalc.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FinCalc.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FinCalc.props",
+      "PackagePath": "build\\FinCalc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FinCalc.props",
+      "PackagePath": "buildMultiTargeting\\FinCalc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FinCalc.props",
+      "PackagePath": "buildTransitive\\FinCalc.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
