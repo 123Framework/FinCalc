@@ -47,6 +47,18 @@
         <div id="transactionsList" class="transactions-list">
 
         </div>
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>Куда уходят расходы</h3>
+                <canvas id="expenseChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Откуда доходы</h3>
+                <canvas id="incomeChart"></canvas>
+            </div>
+
+        </div>
         <div class="transaction-form">
             <input id="amountInput" placeholder="Сумма" />
             <select id="typeInput">
@@ -72,10 +84,11 @@
             </div>
         </div>
     </div>
-        <script src="App.js">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="App.js">
+    </script>
 
-    
+
 </body>
 
 </html>

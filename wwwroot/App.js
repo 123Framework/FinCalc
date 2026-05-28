@@ -1,4 +1,6 @@
 ﻿let messages = [];
+let expenseChart = null;
+let incomeChart = null;
 
 const chatBox = document.getElementById("chatBox");
 const messageInput = document.getElementById("messageInput");
@@ -210,8 +212,10 @@ async function loadTransactions() {
             expense += Number(transaction.amount);
         }
         container.appendChild(div);
+        
     })
 
+    renderCharts(data);
     window.deleteTransaction = async function (id) {
         const response = await fetch(`/api/transactions/${id}`, {
             method: "DELETE",
@@ -230,5 +234,61 @@ async function loadTransactions() {
     document.getElementById("expenseValue").textContent = `${expense}`;
     document.getElementById("balanceValue").textContent = `${income - expense}`;
 }
+function renderCharts(transactions) {
+    const expenseData = {};
+    const incomeData = {};
 
+    transactions.forEach(transaction => {
+        const category = transaction.category || "Без категории";
+        const amount = Number(transaction.amount);
 
+        if (transaction.type === "expense") {
+            expenseData[category] = (expenseData[category] || 0) + amount;
+        } else if (transaction.type === "income") {
+            incomeData[category] = (incomeData[category] || 0) + amount;
+        }
+    })
+    renderPieChart(
+        "expenseChart",
+        expenseChart,
+        "Расходы",
+        expenseData,
+        chart => expenseChart = chart
+    );
+    renderPieChart(
+        "incomeChart",
+        incomeChart,
+        "Доходы",
+        incomeData,
+        chart => incomeChart = chart
+        );
+
+}
+function renderPieChart(canvasId, oldChart, label, dataObject, setChart) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const labels = Object.keys(dataObject);
+    const values = Object.values(dataObject);
+    if (oldChart) {
+        oldChart.destroy();
+    }
+    const chart = new Chart(canvas, {
+        type: "doughnut",
+        data: {
+            labels: labels.length ? labels : ["нет данных"],
+            datasets: [{
+                label: label,
+                data: values.length ? values : [1]
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: "bottom"
+                }
+            }
+        }
+    });
+    setChart(chart);
+}

@@ -276,3 +276,23 @@ button:hover{
 .delete-btn:hover{
     background: #dc2626;
 }
+.charts-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+}
+.chart-card{
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+.chart-card h3{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #111827;
+}
+.chart-card canvas{
+    max-height: 260px;
+}
