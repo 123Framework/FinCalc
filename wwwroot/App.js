@@ -190,12 +190,17 @@ async function loadTransactions() {
                 ${transaction.description}
             </div>
         </div>
+        <div class="transaction-right">
+
+        
         <div class="transaction-amount ${transaction.type}">
             ${transaction.type === "income"
                 ? "+"
                 : "-"
             }
             ${transaction.amount}
+        </div>
+        <button class="delete-btn" onclick="deleteTransaction(${transaction.id})">X</button>
         </div>
         `
         if (transaction.type === "income") {
@@ -206,6 +211,20 @@ async function loadTransactions() {
         }
         container.appendChild(div);
     })
+
+    window.deleteTransaction = async function (id) {
+        const response = await fetch(`/api/transactions/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+            }
+        });
+        if (!response.ok) {
+            alert("ошибка удаления");
+            return;
+        }
+        await loadTransactions();
+    }
 
     document.getElementById("incomeValue").textContent = `${income}`;
     document.getElementById("expenseValue").textContent = `${expense}`;

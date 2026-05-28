@@ -253,3 +253,26 @@ button:hover{
     font-weight: bold;
     color: #111827
 }
+.delete-btn{
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: #ef4444;
+    color:white;
+    cursor:pointer;
+    font-size:14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.transaction-right{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+}
+.delete-btn:hover{
+    background: #dc2626;
+}
