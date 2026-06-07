@@ -59,6 +59,9 @@
             </div>
 
         </div>
+        <button onclick="exportPdf()" class="pdf-btn">
+            Скачать PDF отчет
+        </button>
         <div class="transaction-form">
             <input id="amountInput" placeholder="Сумма" />
             <select id="typeInput">
@@ -84,7 +87,10 @@
             </div>
         </div>
     </div>
+    <canvas id="receiptCanvas" width="600" height="800" style="display:none;"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="App.js">
     </script>
 

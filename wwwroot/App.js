@@ -1,6 +1,7 @@
 ﻿let messages = [];
 let expenseChart = null;
 let incomeChart = null;
+let isSharing = false;
 
 const chatBox = document.getElementById("chatBox");
 const messageInput = document.getElementById("messageInput");
@@ -202,6 +203,9 @@ async function loadTransactions() {
             }
             ${transaction.amount}
         </div>
+
+        <button class="repeat-btn" onclick="repeatTransaction(${transaction.amount},'${transaction.type}','${transaction.category}','${transaction.description}')"></button>
+        <button class="share-btn" onclick="shareTransaction('${transaction.type}','${transaction.amount}','${transaction.category}','${transaction.description}')">Поделиться</button>
         <button class="delete-btn" onclick="deleteTransaction(${transaction.id})">X</button>
         </div>
         `
@@ -212,7 +216,7 @@ async function loadTransactions() {
             expense += Number(transaction.amount);
         }
         container.appendChild(div);
-        
+
     })
 
     renderCharts(data);
@@ -261,7 +265,7 @@ function renderCharts(transactions) {
         "Доходы",
         incomeData,
         chart => incomeChart = chart
-        );
+    );
 
 }
 function renderPieChart(canvasId, oldChart, label, dataObject, setChart) {
@@ -292,3 +296,144 @@ function renderPieChart(canvasId, oldChart, label, dataObject, setChart) {
     });
     setChart(chart);
 }
+window.repeatTransaction = function (amount, type, category, description) {
+    document.getElementById("amountInput").value = amount;
+    document.getElementById("typeInput").value = type;
+    document.getElementById("categoryInput").value = category;
+    document.getElementById("descriptionInput").value = description;
+}
+window.shareTransaction = async function (type, amount, category, description) {
+    if (isSharing) return;
+    isSharing = true;
+    
+
+
+        const sign = type === "income" ? "+" : "-";
+        const title = type === "income" ? "Доход" : "Расход";
+
+        const canvas = document.getElementById("receiptCanvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = '#f3f4f6';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#ffffff";
+        ctx.roundRect(50, 60, 500, 680, 30);
+        ctx.fill();
+
+        ctx.fillStyle = "#111827";
+        ctx.font = "bold 36px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("Finance Ai Receipt", 300, 130);
+        ctx.fillStyle = type === "income" ? "#16a34a" : "#dc2626";
+        ctx.font = "bold 54px Arial";
+        ctx.fillText(`${sign}${amount}`, 300, 230);
+        ctx.strokeStyle = "#e5e7eb";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(90, 280);
+        ctx.lineTo(510, 280);
+        ctx.stroke();
+        ctx.textAlign = "left";
+        ctx.fillStyle = "#6b7280";
+        ctx.font = "22px Arial";
+        ctx.fillText("Тип операции", 90, 340);
+        ctx.fillText("Категория", 90, 430);
+        ctx.fillText("Описание", 90, 520);
+        ctx.fillText("Дата", 90, 610);
+        ctx.fillStyle = "111827";
+    ctx.font = "bold 24px Arial";
+        ctx.fillText(title, 90, 375);
+        ctx.fillText(category || "Без категории", 90, 465);
+        ctx.fillText(description || "Без описания", 90, 555);
+        ctx.fillText(new Date().toLocaleDateString("ru-RU"), 90, 645);
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#9ca3af";
+    ctx.font = "18px Arial";
+    ctx.fillText("Created with Finance Ai Assistant", 300, 700);
+
+
+
+
+    canvas.toBlob(async function (blob) {
+        try {
+
+
+            const file = new File(
+                [blob],
+                "finance-receipt.png",
+                { type: "image/png" }
+            );
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                await navigator.share({
+                    title: "Чек транзакции",
+                    text: " Мой финансовый чек",
+                    files: [file]
+                });
+            }
+            else {
+                const link = document.createElement("a");
+                link.download = "finance-receipt.png";
+                link.href = URL.createObjectURL(blob);
+                link.click();
+
+                alert("Браузер не поддерживает отправку файла. Чек скачан");
+            }
+        } finally {
+            isSharing = false;
+        }
+        });
+       
+    
+    
+}
+window.exportPdf = async function () {
+    const response = await fetch("/api/transactions", {
+        headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        }
+    });
+    const transactions = await response.json();
+    let income = 0;
+    let expense = 0;
+    transactions.forEach(t => {
+        if (t.type === "income") {
+            income += Number(t.amount);
+        } else {
+            expense += Number(t.amount);
+        }
+    });
+    const balance = income - expense;
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    doc.setFontSize(22);
+    doc.text("Finance Ai report", 20, 20);
+
+    doc.setFontSize(12);
+    doc.text(`Date:${new Date().toLocaleDateString("ru-RU")}`, 20, 32);
+    doc.setFontSize(16);
+    doc.text(`Balance: ${balance}Rb`,20, 50);
+    doc.text(`Income: ${income}Rb`,20, 62);
+    doc.text(`Expense: ${expense}Rb`, 20, 74);
+
+    doc.setFontSize(14)
+    doc.text("Transactions: ", 20, 95);
+    let y = 110;
+
+    transactions.forEach((t, index) => {
+        if (y > 280) {
+            doc.addPage();
+            y = 20;
+        }
+        const sign = t.type === "income" ? "+" : "-";
+        doc.setFontSize(11);
+        doc.text(`${index + 1}. ${sign}${t.amount} Rb | ${t.category} | ${t.description}`, 20, y);
+        y += 10;
+    });
+    doc.save("finance-report.pdf");
+}
+const report = document.getElementById("reportSection");
+const canvas = await html2canvas(report);
+const imgData = canvas.toDataURL("image/png");
+const pdf = new jspdf.jsPDF();
+pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
+pdf.save("finance-report.pdf");
