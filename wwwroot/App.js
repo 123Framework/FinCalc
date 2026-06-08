@@ -387,53 +387,14 @@ window.shareTransaction = async function (type, amount, category, description) {
     
 }
 window.exportPdf = async function () {
-    const response = await fetch("/api/transactions", {
-        headers: {
-            "Authorization": `Bearer ${localStorage.getItem("token")}`
-        }
-    });
-    const transactions = await response.json();
-    let income = 0;
-    let expense = 0;
-    transactions.forEach(t => {
-        if (t.type === "income") {
-            income += Number(t.amount);
-        } else {
-            expense += Number(t.amount);
-        }
-    });
-    const balance = income - expense;
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    doc.setFontSize(22);
-    doc.text("Finance Ai report", 20, 20);
 
-    doc.setFontSize(12);
-    doc.text(`Date:${new Date().toLocaleDateString("ru-RU")}`, 20, 32);
-    doc.setFontSize(16);
-    doc.text(`Balance: ${balance}Rb`,20, 50);
-    doc.text(`Income: ${income}Rb`,20, 62);
-    doc.text(`Expense: ${expense}Rb`, 20, 74);
 
-    doc.setFontSize(14)
-    doc.text("Transactions: ", 20, 95);
-    let y = 110;
+    const report = document.getElementById("reportSection");
+    const canvas = await html2canvas(report);
+    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jspdf.jsPDF("p", "mm", "a4");
+    pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
+    pdf.save("finance-report.pdf");
 
-    transactions.forEach((t, index) => {
-        if (y > 280) {
-            doc.addPage();
-            y = 20;
-        }
-        const sign = t.type === "income" ? "+" : "-";
-        doc.setFontSize(11);
-        doc.text(`${index + 1}. ${sign}${t.amount} Rb | ${t.category} | ${t.description}`, 20, y);
-        y += 10;
-    });
-    doc.save("finance-report.pdf");
+    
 }
-const report = document.getElementById("reportSection");
-const canvas = await html2canvas(report);
-const imgData = canvas.toDataURL("image/png");
-const pdf = new jspdf.jsPDF();
-pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
-pdf.save("finance-report.pdf");

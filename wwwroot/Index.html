@@ -17,47 +17,51 @@
                 Logout
             </button>
         </div>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-title">
-                    Баланс
-                </div>
-                <div id="balanceValue" class="stat-value">
-                    0
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-title">
-                    Доходы
-                </div>
-                <div id="incomeValue" class="stat-value income">
-                    0
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-title">
-                    Pacходы
-                </div>
-                <div id="expenseValue" class="stat-value expense">
-                    0
-                </div>
-            </div>
+        <div id="reportSection">
 
-        </div>
-        <div id="transactionsList" class="transactions-list">
 
-        </div>
-        <div class="charts-grid">
-            <div class="chart-card">
-                <h3>Куда уходят расходы</h3>
-                <canvas id="expenseChart"></canvas>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-title">
+                        Баланс
+                    </div>
+                    <div id="balanceValue" class="stat-value">
+                        0
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">
+                        Доходы
+                    </div>
+                    <div id="incomeValue" class="stat-value income">
+                        0
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">
+                        Pacходы
+                    </div>
+                    <div id="expenseValue" class="stat-value expense">
+                        0
+                    </div>
+                </div>
+
             </div>
+            <div id="transactionsList" class="transactions-list">
 
-            <div class="chart-card">
-                <h3>Откуда доходы</h3>
-                <canvas id="incomeChart"></canvas>
             </div>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Куда уходят расходы</h3>
+                    <canvas id="expenseChart"></canvas>
+                </div>
 
+                <div class="chart-card">
+                    <h3>Откуда доходы</h3>
+                    <canvas id="incomeChart"></canvas>
+                </div>
+
+            </div>
         </div>
         <button onclick="exportPdf()" class="pdf-btn">
             Скачать PDF отчет
