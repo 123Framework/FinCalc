@@ -390,10 +390,29 @@ window.exportPdf = async function () {
 
 
     const report = document.getElementById("reportSection");
+    const oldGap = report.style.gap;
+    report.style.gap = "20px";
     const canvas = await html2canvas(report);
+    report.style.gap = oldGap;
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jspdf.jsPDF("p", "mm", "a4");
-    pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
+    const pdfWidth = 210;
+    const pdfHeight = 297;
+    const imgWidth = pdfWidth;
+    const imgHeight = canvas.height * imgWidth / canvas.width;
+    let heightLeft = imgHeight;
+    let position = 0;
+    const margin = 10;
+    pdf.addImage(imgData, "PNG", margin, margin, 190, imgHeight);
+    heightLeft -= pdfHeight;
+    while (heightLeft > 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+       
+    
+    heightLeft -= pdfHeight;
+    }
     pdf.save("finance-report.pdf");
 
     
