@@ -115,7 +115,6 @@ window.onload = async () => {
     }
     await loadTransactions();
     await loadGoals();
-    await loadTransactions();
     await loadCalendar();
 
 }
@@ -137,7 +136,9 @@ async function loadCalendar() {
         }
     }));
     const calendarEl = document.getElementById("calendar");
-    const calendar = new FullCalendar.calendar(calendarEl, {
+    if (!calendarEl) return;
+    calendarEl.innerHTML = "";
+    const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: "dayGridMonth",
         locale: "ru",
         events: events,
@@ -209,6 +210,7 @@ window.addTransaction = async function () {
     }
     alert("Транзакция добавлена");
     await loadTransactions();
+    await loadCalendar();
 }
 async function loadTransactions() {
     const response = await fetch("/api/transactions", {
@@ -272,6 +274,7 @@ async function loadTransactions() {
             return;
         }
         await loadTransactions();
+        await loadCalendar();
     }
 
     document.getElementById("incomeValue").textContent = `${income}`;
