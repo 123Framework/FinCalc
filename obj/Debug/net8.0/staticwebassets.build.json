@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZmN3SuW9u6KwsjuUh6sR6HpuwscOePnsOPGA4WMpBC4=",
+  "Hash": "JaR+q7ut8Q3c9XHS8a3RcX/6cvw/v/zt2klBtMjDD8M=",
   "Source": "FinCalc",
   "BasePath": "_content/FinCalc",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3wot7o69fr",
-      "Integrity": "Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o=",
+      "Fingerprint": "9jn3n4dcci",
+      "Integrity": "5XBtE2y/joduSAqfl9KQ57qkJHjdEDkqgKFiP9V04dI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\App.js"
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "4qzd0csz0d",
-      "Integrity": "5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34=",
+      "Fingerprint": "h7wj9yulzo",
+      "Integrity": "zbrAQP4r8vt0RPgWNZH/62L5LpFEbrL6B1HMWYWoFzY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Index.html"
@@ -136,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xqlizdg6ba",
-      "Integrity": "Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw=",
+      "Fingerprint": "vz9j24t372",
+      "Integrity": "Wxsqro3UwAEJANrnjfYP5XmBv3dIwmUMAD63VEBgj7I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Style.css"
@@ -145,7 +145,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "App.3wot7o69fr.js",
+      "Route": "App.9jn3n4dcci.js",
       "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\App.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -155,7 +155,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6264"
+          "Value": "16322"
         },
         {
           "Name": "Content-Type",
@@ -163,11 +163,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o=\""
+          "Value": "\"5XBtE2y/joduSAqfl9KQ57qkJHjdEDkqgKFiP9V04dI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 26 May 2026 14:43:45 GMT"
+          "Value": "Wed, 17 Jun 2026 07:45:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -177,7 +177,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3wot7o69fr"
+          "Value": "9jn3n4dcci"
         },
         {
           "Name": "label",
@@ -185,7 +185,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o="
+          "Value": "sha256-5XBtE2y/joduSAqfl9KQ57qkJHjdEDkqgKFiP9V04dI="
         }
       ]
     },
@@ -200,7 +200,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6264"
+          "Value": "16322"
         },
         {
           "Name": "Content-Type",
@@ -208,11 +208,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o=\""
+          "Value": "\"5XBtE2y/joduSAqfl9KQ57qkJHjdEDkqgKFiP9V04dI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 26 May 2026 14:43:45 GMT"
+          "Value": "Wed, 17 Jun 2026 07:45:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -222,7 +222,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Q4r9c3p4Q5At02ulET3wZhaQiEyR+cE1EOCivJr+L5o="
+          "Value": "sha256-5XBtE2y/joduSAqfl9KQ57qkJHjdEDkqgKFiP9V04dI="
         }
       ]
     },
@@ -309,7 +309,7 @@
       ]
     },
     {
-      "Route": "Index.4qzd0csz0d.html",
+      "Route": "Index.h7wj9yulzo.html",
       "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -319,7 +319,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2646"
+          "Value": "4564"
         },
         {
           "Name": "Content-Type",
@@ -327,11 +327,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34=\""
+          "Value": "\"zbrAQP4r8vt0RPgWNZH/62L5LpFEbrL6B1HMWYWoFzY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 26 May 2026 14:39:56 GMT"
+          "Value": "Wed, 17 Jun 2026 07:25:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -341,7 +341,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "4qzd0csz0d"
+          "Value": "h7wj9yulzo"
         },
         {
           "Name": "label",
@@ -349,7 +349,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34="
+          "Value": "sha256-zbrAQP4r8vt0RPgWNZH/62L5LpFEbrL6B1HMWYWoFzY="
         }
       ]
     },
@@ -364,7 +364,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2646"
+          "Value": "4564"
         },
         {
           "Name": "Content-Type",
@@ -372,11 +372,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34=\""
+          "Value": "\"zbrAQP4r8vt0RPgWNZH/62L5LpFEbrL6B1HMWYWoFzY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 26 May 2026 14:39:56 GMT"
+          "Value": "Wed, 17 Jun 2026 07:25:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -386,7 +386,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-5NnJhmuD5KjFybgw2Rt4G16Ex3Qg8lY9YHXHdhme/34="
+          "Value": "sha256-zbrAQP4r8vt0RPgWNZH/62L5LpFEbrL6B1HMWYWoFzY="
         }
       ]
     },
@@ -565,7 +565,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4820"
+          "Value": "6239"
         },
         {
           "Name": "Content-Type",
@@ -573,11 +573,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw=\""
+          "Value": "\"Wxsqro3UwAEJANrnjfYP5XmBv3dIwmUMAD63VEBgj7I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 26 May 2026 14:39:56 GMT"
+          "Value": "Wed, 17 Jun 2026 07:25:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -587,12 +587,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw="
+          "Value": "sha256-Wxsqro3UwAEJANrnjfYP5XmBv3dIwmUMAD63VEBgj7I="
         }
       ]
     },
     {
-      "Route": "Style.xqlizdg6ba.css",
+      "Route": "Style.vz9j24t372.css",
       "AssetFile": "C:\\Users\\meysi\\source\\repos\\FinCalc\\FinCalc\\wwwroot\\Style.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -602,7 +602,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4820"
+          "Value": "6239"
         },
         {
           "Name": "Content-Type",
@@ -610,11 +610,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw=\""
+          "Value": "\"Wxsqro3UwAEJANrnjfYP5XmBv3dIwmUMAD63VEBgj7I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 26 May 2026 14:39:56 GMT"
+          "Value": "Wed, 17 Jun 2026 07:25:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -624,7 +624,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xqlizdg6ba"
+          "Value": "vz9j24t372"
         },
         {
           "Name": "label",
@@ -632,7 +632,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Z+pdzxMjsI6lodhZAHqombTHU0r/Cm5yta0IGRXshyw="
+          "Value": "sha256-Wxsqro3UwAEJANrnjfYP5XmBv3dIwmUMAD63VEBgj7I="
         }
       ]
     }

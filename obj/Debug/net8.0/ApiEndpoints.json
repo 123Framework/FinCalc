@@ -130,6 +130,32 @@
     ]
   },
   {
+    "ContainingType": "FinCalc.Controllers.GoalsController",
+    "Method": "GetGoals",
+    "RelativePath": "api/Goals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinCalc.Controllers.GoalsController",
+    "Method": "CreateGoal",
+    "RelativePath": "api/Goals",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "FinCalc.Models.CreateGoalRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FinCalc.Controllers.TransactionsController",
     "Method": "Create",
     "RelativePath": "api/Transactions",
@@ -153,6 +179,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinCalc.Controllers.TransactionsController",
+    "Method": "Delete",
+    "RelativePath": "api/Transactions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]
