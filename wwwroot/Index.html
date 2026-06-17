@@ -47,6 +47,18 @@
                 </div>
 
             </div>
+
+            <h2>Финансовые цели</h2>
+            <div class="goal-form">
+                <input id="goalTitleInput" placeholder="Название цели" />
+                <input id="goalTargetInput" placeholder="Нужно накопить" />
+                <input id="goalCurrentInput" placeholder="Уже есть" />
+                <button onclick="addGoal()">Добавить цель</button>
+            </div>
+            <h2>Календарь расходов</h2>
+            <div id="calendar"></div>
+            <div id="dayTransactions"></div>
+            <div id="goalsList" class="goals-list"></div>
             <div id="transactionsList" class="transactions-list">
 
             </div>
@@ -91,11 +103,15 @@
             </div>
         </div>
     </div>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js"></script>
     <canvas id="receiptCanvas" width="600" height="800" style="display:none;"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="App.js">
+
     </script>
 
 

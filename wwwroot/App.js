@@ -114,6 +114,46 @@ window.onload = async () => {
         messages.forEach(m => renderMessage(m));
     }
     await loadTransactions();
+    await loadGoals();
+    await loadTransactions();
+    await loadCalendar();
+
+}
+async function loadCalendar() {
+    const response = await fetch("/api/transactions", {
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+    });
+    const transactions = await response.json();
+    const events = transactions.map(t => ({
+        title: `${t.type === "income" ? "+" : "-"}${t.amount}`,
+        date: t.createdAt.split("T")[0],
+        extendedProps: {
+            category: t.category,
+            description: t.description,
+            amount: t.amount,
+            type: t.type
+        }
+    }));
+    const calendarEl = document.getElementById("calendar");
+    const calendar = new FullCalendar.calendar(calendarEl, {
+        initialView: "dayGridMonth",
+        locale: "ru",
+        events: events,
+        eventClick(info) {
+            const e = info.event.extendedProps;
+            document.getElementById("dayTransactions").innerHTML = `<div class="day-item">
+            <h3>${e.category}</h3>
+            <p>${e.description}</p>
+            <strong>
+            ${e.type === "income" ? "+" : "-"}
+            ${e.amount}
+            </strong>
+            </div>`
+        }
+    })
+    calendar.render();
 }
 
 function clearChat() {
@@ -416,4 +456,52 @@ window.exportPdf = async function () {
     pdf.save("finance-report.pdf");
 
     
+}
+async function loadGoals() {
+    const response = await fetch("/api/goals", {
+        headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        }
+    });
+    const goals = await response.json();
+    const container = document.getElementById("goalsList");
+    container.innerHTML = "";
+    goals.forEach(goal => {
+        const percent = goal.currentAmount / goal.targetAmount * 100;
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <h3>${goal.title}</h3>
+        <div class="goal-progress"><div class="goal-fill" style="width:${percent}%"></div></div>
+        <p>${goal.currentAmount} / ${goal.targetAmount}</p>
+        `;
+        container.appendChild(div);
+    });
+
+}
+window.addGoal = async function () {
+    const title = document.getElementById("goalTitleInput").value;
+    const targetAmount = document.getElementById("goalTargetInput").value;
+    const currentAmount = document.getElementById("goalCurrentInput").value;
+
+    const response = await fetch("/api/goals", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify({
+            title,
+            targetAmount,
+            currentAmount
+        })
+    });
+    if (!response.ok) {
+        alert("Ошибка добавления цели");
+        return;
+    }
+    document.getElementById("goalTitleInput").value = "";
+    document.getElementById("goalTargetInput").value = "";
+    document.getElementById("goalCurrentInput").value = "";
+    await loadGoals();
+
 }
